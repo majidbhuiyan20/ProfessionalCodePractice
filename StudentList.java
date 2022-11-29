@@ -67,7 +67,7 @@ public class StudentList
 	        Date date = new Date();
 	        String date_format_pattern  = Constants.DATE_FORMAT_PATTERN;
 
-			bufferedWriter.write(Constants.WORDS_SPLIT_REGEX+new Random()+Constants.MSG_DATA_UPDATED+new SimpleDateFormat(date_format_pattern ).format(d));
+			bufferedWriter.write(Constants.WORDS_SPLIT_REGEX+new Random()+Constants.MSG_DATA_UPDATED+new SimpleDateFormat(Constants.date_format_pattern).format(date));
 			bufferedWriter.close();
 			}
 			catch (Exception e)
@@ -85,17 +85,14 @@ public class StudentList
 
 
 			String students[] = getlineFromFile().split(Constants.WORDS_SPLIT_REGEX);
-			boolean done = false;
 
-			for(int idx = 0; idx<i.length && !done; idx++)
+			if(Arrays.stream(students).anyMatch(student -> args[0].substring(1).contains(student.trim())))
 			{
-				if(students[idx].equals(args[0].substring(1)))
-
-
-				{
-					System.out.println(Constants.MSG_DATA_FOUND);
-						done=true;
-				}
+					System.out.println(Constants.MSG_DATA_FOUND +args[0].substring(1));
+			}
+			else{
+				System.out.println(Constants.MSG_DATA_NOT_FOUND +args[0].substring(0));
+			}
 			}
 			}
 			catch (Exception e)
