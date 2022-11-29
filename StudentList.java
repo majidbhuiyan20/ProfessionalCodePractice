@@ -86,6 +86,7 @@ public class StudentList
 			System.out.println("Loading data ...");			
 			try
 			{
+				
 			String line - getlineFromFile();
 			String students[] = line.split(",");
 			boolean done = false;
@@ -93,6 +94,7 @@ public class StudentList
 			for(int idx = 0; idx<i.length && !done; idx++)
 			{
 				if(students[idx].equals(new_data))
+
 
 				{
 					System.out.println("We found it!");
