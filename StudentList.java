@@ -107,20 +107,8 @@ public class StudentList
 			try
 			{
 
-			char students[] = getlineFromFile().toCharArray();
-			boolean in_word = false;
-			int count=0;
-			for(char student:students)
-			{
-				if(student  ==' ')
-				{
-					if (!in_word) {	count++; in_word =true;
-					}
-					else { in_word=false;
-					}
-				}
-			}
-			System.out.println(count +Constants.MSG_WORDS_FOUND);
+
+			System.out.println(getlineFromFile().split(Constants.WORDS_SPLIT_REGEX).length +Constants.MSG_WORDS_FOUND);
 			}
 			catch (Exception e){}
 			System.out.println(Constants.MSG_LOADED_DATA);
