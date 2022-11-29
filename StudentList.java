@@ -3,6 +3,17 @@ import java.text.*;
 import java.util.*;
 public class StudentList
 {
+
+	public static String getlineFromFile() throws  Exception{
+		BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(new FileInputStream("students.txt")));
+		String line = bufferedReader.readLine();
+		return line;
+	}
+	public  static BufferedWriter getFileBufferedWriter() throws Exception{
+		return new BufferedWriter(new FileWriter("students.txt", true));
+	}
+
+
 	public static void main(String[] args)
 	{
 		if(args.length!=1)
@@ -18,10 +29,7 @@ public class StudentList
 			System.out.println("Loading data ...");			
 			try
 			{
-			BufferedReader bufferedReader = new BufferedReader(
-					new InputStreamReader(
-							new FileInputStream("students.txt"))); 
-			String line = bufferedReader.readLine();
+			String line = getlineFromFile();
 			String students[] = line.split(", ");
 			for(String student : students) { System.out.println(student);
 			}
@@ -39,10 +47,7 @@ public class StudentList
 			System.out.println("Loading data ...");			
 			try
 			{
-			BufferedReader bufferedReader = new BufferedReader(
-					new InputStreamReader(
-							new FileInputStream("students.txt"))); 
-			String line = bufferedReader.readLine();
+			String line = getlineFromFile();
 
 			String students[] = line.split(", ");
 			Random random = new Random();
@@ -60,8 +65,7 @@ public class StudentList
 			System.out.println("Loading data ...");			
 			try
 			{
-			BufferedWriter bufferedWriter = new BufferedWriter(
-					new FileWriter("students.txt", true));
+			BufferedWriter bufferedWriter = getFileBufferedWriter(); 	
 			String new_data  = args[0].substring(1);
 	        Date date = new Date();
 	        String date_format_pattern  = "dd-mm-yyyy-hh:mm:ss a";
@@ -82,10 +86,7 @@ public class StudentList
 			System.out.println("Loading data ...");			
 			try
 			{
-			BufferedReader bufferedReader = new BufferedReader(
-					new InputStreamReader(
-							new FileInputStream("students.txt"))); 
-			String line = bufferedReader.readLine();
+			String line - getlineFromFile();
 			String students[] = line.split(",");
 			boolean done = false;
 			String new_data  = args[0].substring(1);
