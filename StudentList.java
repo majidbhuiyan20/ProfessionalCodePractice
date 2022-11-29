@@ -5,6 +5,12 @@ public class StudentList
 {
 	public static void main(String[] args)
 	{
+		if(args.length!=1)
+		{
+			System.err.println("Invalid number of argument");
+			System.err.println("Exiting Program.");
+			System.exit(1);
+		}
 
 //		Check arguments
 		if(args[0].equals("a"))
@@ -125,6 +131,13 @@ public class StudentList
 			}
 			catch (Exception e){}
 			System.out.println("Data Loaded.");				
+		}
+
+		else
+		{
+			System.err.println("Invalid number of argument");
+			System.err.println("Exiting Program.");
+			System.exit(2);
 		}
 	}
 }
