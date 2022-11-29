@@ -19,6 +19,7 @@ public class StudentList
 		if(args.length!=1)
 		{
 			System.err.println(Constants.MSG_INVALID_NUMBER_OF_ARGUMENTS);
+			System.err.println(Constants.MSG_USAGE);
 			System.err.println(Constants.MSG_EXITING_PROGRAM);
 			System.exit(1);
 		}
@@ -118,6 +119,7 @@ public class StudentList
 		{
 			System.err.println(Constants.MSG_INVALID_ARGUMENTS);
 			System.err.println(Constants.MSG_EXITING_PROGRAM);
+			System.err.println(Constants.MSG_USAGE);
 			System.exit(2);
 		}
 	}
