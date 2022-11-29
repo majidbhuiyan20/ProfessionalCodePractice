@@ -14,6 +14,11 @@ public class Constants {
     public static final String MSG_DATA_FOUND = "We found it!";
     public static final String MSG_DATA_NOT_FOUND = "We could not find it!";
     public static final String MSG_INVALID_NUMBER_OF_ARGUMENTS = "Invalid number of arguments";
+    public static final String MSG_USAGE = "Usage:" +
+            "\njava StudentList a" +
+            "\njava StudentList r" +
+            "\njava StudentList c" +
+            "\netc";
     public static final String MSG_EXITING_PROGRAM = "Exiting program.";
 
 
